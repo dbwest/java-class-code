@@ -1,11 +1,8 @@
+This a reflection of the slides with some extra stuff (it's missing some stuff also)
 ----
-FizzBuzz
-http://en.wikipedia.org/wiki/Fizz_buzz
-
-----
-+ Code Org
++ Java
   + Packages
-    + e.g. com.pillartechnology.stuff (it's backwards!)
+    + e.g. com.pillartechnology.stuff (it's backwards)
   + Classes units of actual code
     + One class per file (usually)   
     + public Class stuff
@@ -15,7 +12,7 @@ http://en.wikipedia.org/wiki/Fizz_buzz
       public void doStuff() { System.out.println("I do stuff"); }
   + Types
     + int, long float double byte char boolean String Stuff
-    + Classes are types too!
+    + Classes are types too
       + Examples: String and Stuff
   + Methods --- return and arguments
     + public int stuff
@@ -26,3 +23,43 @@ http://en.wikipedia.org/wiki/Fizz_buzz
     + invoke with magic 'new' keyword ... Stuff stuff = new Stuff();
   + Class constructors
     + set stuff up. invoked with new operator. 
+  + Imports
+    + You want to use Classes from other packages
+  + Scoping
+    + Access modifiers (avoid public and encapsulate...)
+  ----
+  + Control Structures
+  + If Else Else If
+  + Do While Until
+  + Case
+  + For 
+  ----
+  + Arrays
+   + Bounded sets of a particular type
+   
+
+
+ ----
+ + TDD
+   + Ping Pong Pairing
+     + Alyssa writes Test
+     + Guy makes it pass
+     + Guy Writes a test
+     + Alyssa makes it pass ...
+   + Dos
+     + Start with a failing test
+     + Write test that become increasingly specific
+     + Write code that becomes more and more generic
+     + Take turns writing tests, coding, and refactoring
+     + kibitz while pairing
+     + consider keeping a list of tests you need to write
+   + Don't
+     + write more than one test at a time
+       + Your design evolves over time
+       + This helps prevent overengineering
+       + Clearer
+     + have more than one assertion in a test
+     + write any more code than is needed to make the current test pass.
+     + code alone...
+       + Can prevent you from using unproductive object models, missing semicolons, etc. "Get your unfruitful branches pruned"
+   + Check your code in when you are green. (High Fiving)
