@@ -62,3 +62,4 @@ This a reflection of the slides with some extra stuff (it's missing some stuff a
      + write any more code than is needed to make the current test pass.
      + code alone...
        + Can prevent you from using unproductive object models, missing semicolons, etc. "Get your unfruitful branches pruned"
+   + Check your code in when you are green. (High Fiving)
