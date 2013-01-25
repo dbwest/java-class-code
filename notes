@@ -5,7 +5,7 @@ http://en.wikipedia.org/wiki/Fizz_buzz
 ----
 + Code Org
   + Packages
-    + e.g. com.pillartechnology.stuff (it's backwards!)
+    + e.g. com.pillartechnology.stuff (it's backwards)
   + Classes units of actual code
     + One class per file (usually)   
     + public Class stuff
@@ -15,7 +15,7 @@ http://en.wikipedia.org/wiki/Fizz_buzz
       public void doStuff() { System.out.println("I do stuff"); }
   + Types
     + int, long float double byte char boolean String Stuff
-    + Classes are types too!
+    + Classes are types too
       + Examples: String and Stuff
   + Methods --- return and arguments
     + public int stuff
@@ -26,3 +26,26 @@ http://en.wikipedia.org/wiki/Fizz_buzz
     + invoke with magic 'new' keyword ... Stuff stuff = new Stuff();
   + Class constructors
     + set stuff up. invoked with new operator. 
+  + Imports
+    + You want to use Classes from other packages
+  + Scoping
+    + Access modifiers (avoid public and encapsulate...)
+  ----
+  + Control Structures
+  + If Else Else If
+  + Do While Until
+  + Case
+  + For 
+  ----
+  + Arrays
+   + Bounded sets of a particular type
+   
+
+
+ ----
+ + TDD
+   + Ping Pong Pairing
+     + Alyssa writes Test
+     + Guy makes it pass
+     + Guy Writes a test
+     + Alyssa makes it pass ...
