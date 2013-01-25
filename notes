@@ -1,9 +1,6 @@
+This a reflection of the slides with some extra stuff (it's missing some stuff also)
 ----
-FizzBuzz
-http://en.wikipedia.org/wiki/Fizz_buzz
-
-----
-+ Code Org
++ Java
   + Packages
     + e.g. com.pillartechnology.stuff (it's backwards)
   + Classes units of actual code
