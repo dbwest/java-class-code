@@ -49,3 +49,15 @@ http://en.wikipedia.org/wiki/Fizz_buzz
      + Guy makes it pass
      + Guy Writes a test
      + Alyssa makes it pass ...
+   + Dos
+     + Start with a failing test
+     + Write test that become increasingly specific
+     + Write code that becomes more and more generic
+     + Take turns writing tests, coding, and refactoring
+     + kibitz while pairing
+     + consider keeping a list of tests you need to write
+   + Don't
+     + write more than one test at a time
+     + have more than one assertion in a test
+     + write any more code than is needed to make the current test pass.
+     + code alone...
