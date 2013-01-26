@@ -13,11 +13,17 @@ public class VendingMachine {
 	public int getValue(String string) {
 		int value = 0;
 		
-		if (string == "QUARTER")
+		if (string == "QUARTER") {
 			value = 25;
+		}
 		
-		if (string == "DIME")
+		if (string == "DIME") {
 			value = 10;
+		}
+		
+		if (string == "NICKLE") { 
+			value = 5;
+		}
 		
 		return value;
 	}

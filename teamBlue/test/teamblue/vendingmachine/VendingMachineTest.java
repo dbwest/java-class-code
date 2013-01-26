@@ -24,4 +24,11 @@ public class VendingMachineTest {
 		VendingMachine machine = new VendingMachine();
 		assertEquals(10, machine.getValue("DIME"));
 	}
+	
+
+	@Test
+	public void itAssignsAValueForANickle() {
+		VendingMachine machine = new VendingMachine();
+		assertEquals(5, machine.getValue("NICKLE"));
+	}
 }
