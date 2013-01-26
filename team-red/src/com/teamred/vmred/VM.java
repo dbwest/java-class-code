@@ -9,7 +9,12 @@ public class VM {
 
 	public Object getDisplay() {
 		// TODO Auto-generated method stub
-		return null;
+		return "INSERT COIN";
+	}
+
+	public void insert(Coins quarter) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
