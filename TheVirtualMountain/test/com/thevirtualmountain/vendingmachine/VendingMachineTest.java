@@ -64,5 +64,36 @@ public class VendingMachineTest {
 		
 		assertEquals("Cola", machine.dispenseProduct("Cola"));
 	}
+	
+	@Test
+	public void itDispensesChipsWhenOneDollarHasBeenInserted() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("Chips", machine.dispenseProduct("Chips"));
+	}
+	
+	@Test
+	public void itDispensesCandyWhenOneDollarHasBeenInserted() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("Candy", machine.dispenseProduct("Candy"));
+	}
+	
+	@Test
+	public void itDisplaysThankYouAfterVending() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.dispenseProduct("Candy");
+		
+		assertEquals("THANK YOU", machine.getDisplay());
+	}
 
 }

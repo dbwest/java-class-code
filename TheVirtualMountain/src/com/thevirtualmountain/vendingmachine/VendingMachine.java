@@ -8,18 +8,25 @@ public class VendingMachine {
 	private static final double Quarter = 0.25;
 	
 	private static final double ColaPrice = 1.00;
+	private static final double ChipsPrice = 0.50;
+	private static final double CandyPrice = 0.65;
+	
+	private static boolean hasDispensed = false;
+	
+	private static String currentDisplay;
 	
 	public VendingMachine() {
 		currentTotal = 0.0;
+		currentDisplay = "INSERT COIN";
 	}
 	
 	public String getDisplay() {
 		
-		if (currentTotal > 0.0) {
+		if (currentTotal > 0.0 && !hasDispensed) {
 			return String.format("%.2f", currentTotal);
 		}
 		
-		return "INSERT COIN";
+		return currentDisplay;
 	}
 
 
@@ -43,10 +50,21 @@ public class VendingMachine {
 	}
 
 	public String dispenseProduct(String product) {
+		String dispenseItem = "";
+		
 		if(product.equals("Cola") && currentTotal >= ColaPrice){
-			return "Cola";
+			dispenseItem = "Cola";
 		}
-		return null;
+		else if (product.equals("Chips") && currentTotal >= ChipsPrice) {
+			dispenseItem = "Chips";
+		}
+		else if (product.equals("Candy") && currentTotal >= CandyPrice) {
+			dispenseItem = "Candy";
+		}
+		
+		currentDisplay = "THANK YOU";
+		hasDispensed = true;
+		return dispenseItem;
 	}
 
 }
