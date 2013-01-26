@@ -15,14 +15,31 @@ public class VMTest {
 	}
 	
 	@Test 
+	public void itDisplaysInsertCoin() {
+		assertEquals (vm.getDisplay(),"INSERT COIN");
+	}
+	
+	@Test 
 	public void itAcceptsNickels() {
-		assertEquals (5, vm.accept(Coins.nickeles,5) ); 
+		assertEquals (5, vm.accept(Coins.nickeles) ); 
 		
 	}
 	
 	@Test
 	public void itAcceptsAllDimes() {
-		assertEquals (10, vm.accept(Coins.dime, 10));
+		assertEquals (10, vm.accept(Coins.dime));
 	}
+
+	@Test
+	public void itAcceptsAllQuarters() {
+		assertEquals (25, vm.accept(Coins.quarter));
+	}	
+	
+	@Test
+	public void itShouldNotAcceptsPennies() {
+		assertEquals (0, vm.accept(Coins.invalidCoin));
+	}
+	
+
 
 }
