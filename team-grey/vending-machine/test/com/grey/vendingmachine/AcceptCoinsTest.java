@@ -7,8 +7,10 @@ import org.junit.Test;
 public class AcceptCoinsTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void itDisplaysInsertCoinWhenCoinless() {
+		VendingMachine machine = new VendingMachine();
+		
+		assertEquals("INSERT COIN", machine.getDisplayValue());
 	}
 
 }
