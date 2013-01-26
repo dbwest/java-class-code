@@ -51,5 +51,12 @@ public class VMTest {
 		vm.insert(Coins.invalidCoin);
 		assertEquals ("INSERT COIN", vm.getDisplay());
 	}	
+	@Test
+	public void itDisplays35IfYouPutInAQuarterAndADime() {
+		vm.insert(Coins.quarter);
+		vm.insert(Coins.dime);
+
+		assertEquals ("35", vm.getDisplay());
+	}
 
 }

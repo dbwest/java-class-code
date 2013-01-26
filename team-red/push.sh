@@ -1,2 +1,3 @@
+git add .
 git commit -am " updates " 
-git push upstream
+git pull && push upstream

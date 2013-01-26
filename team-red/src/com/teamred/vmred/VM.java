@@ -14,7 +14,10 @@ public class VM {
 
 	public void insert(Coins type) {
 		int moneyInserted = this.accept(type);
-		displayBoard = String.valueOf(moneyInserted) ;				
+		if (moneyInserted != 0) {
+			displayBoard = String.valueOf(moneyInserted) ;				
+
+		}
 	}
 
 }
