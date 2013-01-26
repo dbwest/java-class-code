@@ -1,5 +1,6 @@
 package com.teamred.vmred;
 
-public class VM {
+public enum Coins {
+	nickeles
 
 }
