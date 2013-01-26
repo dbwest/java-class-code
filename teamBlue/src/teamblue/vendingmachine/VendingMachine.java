@@ -28,6 +28,11 @@ public class VendingMachine {
 		return value;
 	}
 
+	public boolean isValid(String string) {
+
+		return (getValue(string) > 0);
+	}
+
 	
 
 } 

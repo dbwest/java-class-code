@@ -31,4 +31,16 @@ public class VendingMachineTest {
 		VendingMachine machine = new VendingMachine();
 		assertEquals(5, machine.getValue("NICKLE"));
 	}
+	
+
+	@Test
+	public void itIsValidCoin() {
+		VendingMachine machine = new VendingMachine();
+		assertEquals(false, machine.isValid("PENNY"));
+		assertEquals(true, machine.isValid("NICKLE"));
+		assertEquals(true, machine.isValid("DIME"));
+		assertEquals(true, machine.isValid("QUARTER"));
+	}
+	
+	
 }
