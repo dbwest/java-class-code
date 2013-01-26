@@ -2,15 +2,36 @@ package com.grey.vendingmachine;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class AcceptCoinsTest {
+	
+	private VendingMachine machine;
+	
+	@Before
+    public void setUp() {
+		machine = new VendingMachine();
+    }
 
 	@Test
 	public void itDisplaysInsertCoinWhenCoinless() {
-		VendingMachine machine = new VendingMachine();
+		assertEquals("INSERT COIN", machine.displayValue());
+	}
+	
+	@Test
+	public void itDisplaysProperValueWhenCoinInserted() {
+		machine.insertCoin("Quarter");
 		
-		assertEquals("INSERT COIN", machine.getDisplayValue());
+		assertEquals("0.25", machine.displayValue());
+	}
+	
+	@Test
+	public void itDisplaysValueofCoinsInserted() {
+		machine.insertCoin("Nickel");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("0.30", machine.displayValue());
 	}
 
 }

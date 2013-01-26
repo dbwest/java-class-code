@@ -40,6 +40,11 @@ public class VMTest {
 		assertEquals (0, vm.accept(Coins.invalidCoin));
 	}
 	
+	@Test
+	public void itDisplaysTheValueOfACoin() {
+		vm.insert(Coins.quarter);
+		assertEquals ("25", vm.getDisplay());
+	}
 
 
 }
