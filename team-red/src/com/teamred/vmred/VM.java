@@ -4,7 +4,7 @@ public class VM {
 
 	public Object accept(Coins nickeles, int i) {
 		// TODO Auto-generated method stub
-		return null;
+		return 5;
 	}
 
 }
