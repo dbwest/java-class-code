@@ -73,14 +73,14 @@ public class VMTest {
 	@Test
 	public void itReturnsZeroOnInvalidCoin() {
 		vm.insert(Coins.invalidCoin);
-		assertEquals ("0", vm.getChangeBin());
+		assertEquals (0, vm.getChangeBin());
 	}
 
 	@Test
 	public void itReturnsAccountValue() {
 		vm.insert(Coins.quarter);
 		vm.eject() ; 
-		assertEquals ("25", vm.getChangeBin());
+		assertEquals (25, vm.getChangeBin());
 	}
 	
 	
