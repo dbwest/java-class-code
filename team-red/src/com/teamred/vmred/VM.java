@@ -1,20 +1,20 @@
 package com.teamred.vmred;
 
 public class VM {
-
-	public Object accept(Coins type) {
-		
+	
+	private String displayBoard = "INSERT COIN"  ;
+	
+	public int accept(Coins type) {		
 		return type.value();
 	}
 
 	public Object getDisplay() {
-		// TODO Auto-generated method stub
-		return "INSERT COIN";
+		return displayBoard;
 	}
 
-	public void insert(Coins quarter) {
-		// TODO Auto-generated method stub
-		
+	public void insert(Coins type) {
+		int moneyInserted = this.accept(type);
+		displayBoard = String.valueOf(moneyInserted) ;				
 	}
 
 }

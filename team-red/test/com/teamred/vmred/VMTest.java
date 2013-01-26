@@ -46,5 +46,10 @@ public class VMTest {
 		assertEquals ("25", vm.getDisplay());
 	}
 
+	@Test
+	public void itDisplaysInsertCoinWhenNoMoney() {
+		vm.insert(Coins.invalidCoin);
+		assertEquals ("INSERT COIN", vm.getDisplay());
+	}	
 
 }
