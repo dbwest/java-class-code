@@ -4,7 +4,8 @@ public class VM {
 	static final String INSERTCOIN = "INSERT COIN" ;
 	private String displayBoard = INSERTCOIN  ;
 	private int account = 0 ;
-	
+	private int bin = 0;
+
 	public int accept(Coins type) {		
 		return type.value();
 	}
@@ -16,25 +17,29 @@ public class VM {
 	public void insert(Coins type) {
 		int moneyInserted = this.accept(type);
 		account += moneyInserted ; 
-		
+
 		if (moneyInserted != 0) {
 			displayBoard = String.valueOf(account) ;
 		}
 		else { 
 			displayBoard = INSERTCOIN ;
 		}
-		
-		
+
+
 	}
 
-	public Object getChangeBin() {
-		// TODO Auto-generated method stub
-		return null;
+	public int getChangeBin() {
+		
+		return bin;
 	}
 
 	public void eject() {
-		// TODO Auto-generated method stub
-		
+
+		int holder = account;
+		account = 0;
+		bin += holder;
+
+		return;
 	}
 
 }

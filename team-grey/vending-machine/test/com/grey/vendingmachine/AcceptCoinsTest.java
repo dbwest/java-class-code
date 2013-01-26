@@ -41,5 +41,14 @@ public class AcceptCoinsTest {
 		assertEquals("INSERT COIN", machine.displayValue());
 		assertArrayEquals(new String[] {"Penny"}, machine.returnSlot());
 	}
+	
+	@Test
+	public void itStillDisplaysMonetaryValueAfterAPenny() {
+		machine.insertCoin("Dime");
+		machine.insertCoin("Penny");
+		
+		assertEquals("0.10", machine.displayValue());
+		assertArrayEquals(new String[] {"Penny"}, machine.returnSlot());
+	}
 
 }
