@@ -58,5 +58,30 @@ public class VMTest {
 
 		assertEquals ("35", vm.getDisplay());
 	}
+	
+	@Test
+	public void itDisplays50IfYouPutInAQuarterAndADime() {
+		vm.insert(Coins.quarter);
+		vm.insert(Coins.dime);
+		vm.insert(Coins.nickeles);
+		vm.insert(Coins.nickeles);
+		vm.insert(Coins.nickeles);
 
+		assertEquals ("50", vm.getDisplay());
+	}
+
+	@Test
+	public void itReturnsZeroOnInvalidCoin() {
+		vm.insert(Coins.invalidCoin);
+		assertEquals ("0", vm.getChangeBin());
+	}
+
+	@Test
+	public void itReturnsAccountValue() {
+		vm.insert(Coins.quarter);
+		vm.eject() ; 
+		assertEquals ("25", vm.getChangeBin());
+	}
+	
+	
 }

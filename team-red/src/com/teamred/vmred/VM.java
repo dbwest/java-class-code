@@ -1,8 +1,9 @@
 package com.teamred.vmred;
 
 public class VM {
-	
-	private String displayBoard = "INSERT COIN"  ;
+	static final String INSERTCOIN = "INSERT COIN" ;
+	private String displayBoard = INSERTCOIN  ;
+	private int account = 0 ;
 	
 	public int accept(Coins type) {		
 		return type.value();
@@ -14,10 +15,26 @@ public class VM {
 
 	public void insert(Coins type) {
 		int moneyInserted = this.accept(type);
+		account += moneyInserted ; 
+		
 		if (moneyInserted != 0) {
-			displayBoard = String.valueOf(moneyInserted) ;				
-
+			displayBoard = String.valueOf(account) ;
 		}
+		else { 
+			displayBoard = INSERTCOIN ;
+		}
+		
+		
+	}
+
+	public Object getChangeBin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void eject() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
