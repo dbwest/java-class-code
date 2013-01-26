@@ -42,5 +42,23 @@ public class VendingMachineTest {
 		assertEquals(true, machine.isValid("QUARTER"));
 	}
 	
+	@Test
+	public void itAccumulatesCoinValues() {
+		VendingMachine machine = new VendingMachine();
+		boolean isValidCoin;
+		
+		isValidCoin = machine.insertCoin("QUARTER");
+		assertEquals(true, isValidCoin);
+		assertEquals(25,machine.getAccumulatedValue());
+		
+		isValidCoin = machine.insertCoin("DIME");
+		assertEquals(true, isValidCoin);
+		assertEquals(35,machine.getAccumulatedValue());
+
+		isValidCoin = machine.insertCoin("PENNY");
+		assertEquals(false, isValidCoin);
+		assertEquals(35,machine.getAccumulatedValue());
+	}
+	
 	
 }
