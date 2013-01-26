@@ -17,6 +17,8 @@ public class VendingMachineTest {
 	public void itAssignsAValueForAQuarter() {
 		VendingMachine machine = new VendingMachine();
 		assertEquals(25, machine.getValue("QUARTER"));
+		assertEquals(25, machine.getValue(new String("QUARTER")));
+		
 	}
 
 	@Test
@@ -59,6 +61,7 @@ public class VendingMachineTest {
 		assertEquals(false, isValidCoin);
 		assertEquals(35,machine.getAccumulatedValue());
 	}
+	
 	
 	
 }

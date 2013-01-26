@@ -14,15 +14,15 @@ public class VendingMachine {
 	public int getValue(String string) {
 		int value = 0;
 		
-		if (string == "QUARTER") {
+		if (string.equalsIgnoreCase("QUARTER")) {
 			value = 25;
 		}
 		
-		if (string == "DIME") {
+		if (string.equalsIgnoreCase("DIME")) {
 			value = 10;
 		}
 		
-		if (string == "NICKLE") { 
+		if (string.equalsIgnoreCase("NICKLE")){ 
 			value = 5;
 		}
 		
