@@ -14,6 +14,10 @@ public class VendingMachineTest {
 		machine = new VendingMachine();
 	}
 	
+	/**
+	 * Accept Coins
+	 */
+	
 	@Test
 	public void itDisplaysInsertCoinWhenNoCoinsInserted() {
 		assertEquals("INSERT COIN", machine.getDisplay());
@@ -37,6 +41,59 @@ public class VendingMachineTest {
 	@Test
 	public void itDisplaysInsertCoinWhenInvalidCoinInserted() {
 		assertEquals("INSERT COIN", machine.insertCoin("Penny"));
+	}
+	
+	@Test
+	public void itDisplaysTotalValueWhenMultipleCoinsInserted(){
+		machine.insertCoin("Nickel");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("0.30", machine.getDisplay());
+	}
+	
+	/**
+	 * Select Product
+	 */
+	
+	@Test
+	public void itDispensesColaWhenOneDollarHasBeenInserted() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("Cola", machine.dispenseProduct("Cola"));
+	}
+	
+	@Test
+	public void itDispensesChipsWhenOneDollarHasBeenInserted() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("Chips", machine.dispenseProduct("Chips"));
+	}
+	
+	@Test
+	public void itDispensesCandyWhenOneDollarHasBeenInserted() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		
+		assertEquals("Candy", machine.dispenseProduct("Candy"));
+	}
+	
+	@Test
+	public void itDisplaysThankYouAfterVending() {
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.insertCoin("Quarter");
+		machine.dispenseProduct("Candy");
+		
+		assertEquals("THANK YOU", machine.getDisplay());
 	}
 
 }

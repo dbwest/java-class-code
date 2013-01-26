@@ -1,8 +1,9 @@
 package teamblue.vendingmachine;
 
 public class VendingMachine {
+	private int accumulatedValue = 0;
 	
-	VendingMachine(){
+	VendingMachine() {
 		
 	}
 	
@@ -31,6 +32,20 @@ public class VendingMachine {
 	public boolean isValid(String string) {
 
 		return (getValue(string) > 0);
+	}
+
+	public boolean insertCoin(String coinString) {
+		if (isValid(coinString)) {
+			accumulatedValue += getValue(coinString);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public int getAccumulatedValue() {
+		return accumulatedValue;
 	}
 
 	
