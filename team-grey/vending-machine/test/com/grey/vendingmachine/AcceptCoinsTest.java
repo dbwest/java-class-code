@@ -33,5 +33,13 @@ public class AcceptCoinsTest {
 		
 		assertEquals("0.30", machine.displayValue());
 	}
+	
+	@Test
+	public void itDoesNotDisplayValueforPennies() {
+		machine.insertCoin("Penny");
+		
+		assertEquals("INSERT COIN", machine.displayValue());
+		assertArrayEquals(new String[] {"Penny"}, machine.returnSlot());
+	}
 
 }

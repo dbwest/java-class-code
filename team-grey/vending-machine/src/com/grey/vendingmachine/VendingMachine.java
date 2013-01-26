@@ -1,8 +1,10 @@
 package com.grey.vendingmachine;
+import java.util.*;
 
 public class VendingMachine {
 	private String displayValue = "INSERT COIN";
 	private double cashAmt = 0;
+	private ArrayList<String> returnSlot = new ArrayList<String>();
 	
 	public String displayValue() {		
 		return displayValue;
@@ -18,7 +20,13 @@ public class VendingMachine {
 			displayValue = String.format("%4.2f", cashAmt);
 		}
 		else {
+			returnSlot.add(coin);
 			displayValue = "INSERT COIN";
 		}	
+	}
+
+	public Object[] returnSlot() {
+	
+		return returnSlot.toArray();
 	}
 }
