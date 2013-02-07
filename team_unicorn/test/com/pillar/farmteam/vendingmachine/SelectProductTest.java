@@ -31,4 +31,14 @@ public class SelectProductTest {
         machine.select(Product.CANDY);
         assertEquals("PRICE 0.65", machine.display());
     }
+
+    @Test
+    public void it_displays_thank_you_when_product_is_pressed_with_enough_money() {
+        machine.insertCoin("QUARTER");
+        machine.insertCoin("QUARTER");
+        machine.insertCoin("QUARTER");
+        machine.insertCoin("QUARTER");
+        machine.select(Product.COLA);
+        assertEquals("THANK YOU", machine.display());
+    }
 }

@@ -44,6 +44,12 @@ public class VendingMachine {
 
     public void select(Product button) {
         StringBuilder builder = new StringBuilder();
-        display = builder.append("PRICE ").append(button.price()).toString();
+        if (currentTotal == 1.00f) {
+            currentTotal = 0.0f;
+            display = "THANK YOU";
+        } else {
+            display = builder.append("PRICE ").append(button.price()).toString();
+        }
+
     }
 }
