@@ -30,12 +30,6 @@ public class VendingMachineTest {
     }
 
     @Test
-    public void itDisplaysInvalidWhenBadCoinIsInserted() {
-        machine.insertCoin("BAD_COIN");
-        assertEquals("INVALID", machine.getDisplay());
-    }
-
-    @Test
     public void itPutsInvalidCoinsInTheCoinReturn() {
         machine.insertCoin("LOONIE");
         assertTrue(machine.getCoinReturn().contains("LOONIE"));
@@ -45,10 +39,8 @@ public class VendingMachineTest {
     public void itPutsMutipleInvalidCoinsInTheCoinReturn() {
         machine.insertCoin("LOONIE");
         machine.insertCoin("BAD_COIN");
-        boolean loonie = machine.getCoinReturn().contains("LOONIE");
-        boolean badCoin = machine.getCoinReturn().contains("BAD_COIN");
-        assertTrue(loonie);
-        assertTrue(badCoin);
+        assertTrue(machine.getCoinReturn().contains("LOONIE"));
+        assertTrue(machine.getCoinReturn().contains("BAD_COIN"));
         assertEquals(2, machine.getCoinReturn().size());
     }
 

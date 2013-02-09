@@ -8,14 +8,14 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AmericanVendingMachineTest {
+public class CanadianVendingMachineTest {
 
     private VendingMachine machine;
 
     @Before
     public void setUp() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("american_context.xml");
-        machine = (VendingMachine) context.getBean("american");
+        ApplicationContext context = new ClassPathXmlApplicationContext("canadian_context.xml");
+        machine = (VendingMachine) context.getBean("canadian");
     }
 
     @Test
@@ -37,8 +37,20 @@ public class AmericanVendingMachineTest {
     }
 
     @Test
-    public void itDoesNotTakeLoonies() {
+    public void itTakesLoonies() {
         machine.insertCoin("LOONIE");
+        assertEquals("1.00", machine.getDisplay());
+    }
+
+    @Test
+    public void itTakesToonies() {
+        machine.insertCoin("TOONIE");
+        assertEquals("2.00", machine.getDisplay());
+    }
+
+    @Test
+    public void itDoesNotTakeEuros() {
+        machine.insertCoin("EURO");
         assertEquals("0.00", machine.getDisplay());
     }
 
@@ -47,13 +59,15 @@ public class AmericanVendingMachineTest {
         machine.insertCoin("NICKEL");
         machine.insertCoin("DIME");
         machine.insertCoin("QUARTER");
-        assertEquals("0.40", machine.getDisplay());
+        machine.insertCoin("LOONIE");
+        machine.insertCoin("TOONIE");
+        assertEquals("3.40", machine.getDisplay());
     }
 
     @Test
     public void itPutsInvalidCoinsInTheCoinReturn() {
-        machine.insertCoin("LOONIE");
-        assertTrue(machine.getCoinReturn().contains("LOONIE"));
+        machine.insertCoin("EURO");
+        assertTrue(machine.getCoinReturn().contains("EURO"));
     }
 
 }
