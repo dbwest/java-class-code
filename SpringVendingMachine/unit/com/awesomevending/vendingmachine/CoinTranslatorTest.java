@@ -23,13 +23,13 @@ public class CoinTranslatorTest {
     }
 
     @Test
-    public void itReturnsTheValueOfCoin() throws InvalidCoinException {
+    public void itReturnsTheValueOfCoin() {
         double value = translator.valuateCoin("COIN");
         assertEquals(0.45, value, 0.001);
     }
 
     @Test(expected = InvalidCoinException.class)
-    public void itThrowsInvalidCoinExceptionWhenCoinIsInvalid() throws InvalidCoinException {
+    public void itThrowsInvalidCoinExceptionWhenCoinIsInvalid() {
         translator.valuateCoin("BAD_COIN");
     }
 

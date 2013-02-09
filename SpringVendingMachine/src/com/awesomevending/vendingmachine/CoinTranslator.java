@@ -2,6 +2,6 @@ package com.awesomevending.vendingmachine;
 
 public interface CoinTranslator {
 
-    double valuateCoin(String coin) throws InvalidCoinException;
+    double valuateCoin(String coin);
 
 }

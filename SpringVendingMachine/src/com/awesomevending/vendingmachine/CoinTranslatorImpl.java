@@ -10,7 +10,7 @@ public class CoinTranslatorImpl implements CoinTranslator {
         this.coinValues = coinValues;
     }
 
-    public double valuateCoin(String coin) throws InvalidCoinException {
+    public double valuateCoin(String coin) {
         Double value = coinValues.get(coin);
         if (value == null)
             throw new InvalidCoinException();

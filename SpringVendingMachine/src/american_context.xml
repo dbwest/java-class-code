@@ -4,20 +4,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="canadian" class="com.awesomevending.vendingmachine.VendingMachine">
-		<property name="coinTranslator" ref="canadianCoins" />
-	</bean>
 
-	<bean id="canadianCoins" class="com.awesomevending.vendingmachine.CoinTranslatorImpl">
+	<bean id="american" class="com.awesomevending.vendingmachine.VendingMachine">
+		<property name="coinTranslator" ref="americanCoins" />
+	</bean>
+		
+	<bean id="americanCoins" class="com.awesomevending.vendingmachine.CoinTranslatorImpl">
 		<property name="coinValues">
 			<map>
 				<entry key="NICKEL" value="0.05" />
 				<entry key="DIME" value="0.10" />
 				<entry key="QUARTER" value="0.25" />
-				<entry key="LOONIE" value="1.00" />
-				<entry key="TOONIE" value="2.00" />
 			</map>
 		</property>
 	</bean>
-	
+
 </beans>
